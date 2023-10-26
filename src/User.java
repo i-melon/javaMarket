@@ -1,6 +1,6 @@
 abstract class User {
     private String fullName;
-    private long iin;
+    private final long iin;
     private String contactNumber;
 
     public User(String fullName, long iin, String contactNumber) {

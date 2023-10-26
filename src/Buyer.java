@@ -3,9 +3,9 @@ enum CardType {
 }
 
 class Buyer extends User {
+
     @Override
     void changeNumber(String number) {
-        
     }
 
     @Override
@@ -45,6 +45,12 @@ class Buyer extends User {
     private boolean validateCreditCardNumber(String creditCardNumber) {
         // Проверка на длину номера кредитной карты
         return creditCardNumber.matches("\\d{16}");
+    }
+
+    public void buyLaptop(Laptop laptop, Salesman salesman) {
+    }
+
+    public void buyMobile(Mobile mobile, Salesman salesman) {
     }
 }
 
