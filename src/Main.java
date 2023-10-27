@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -6,6 +8,9 @@ public class Main {
     static Scanner scan= new Scanner(System.in);
     static Buyer client = new Buyer("Bayakhan Aidyn", 000101502464, "77477767009", CardType.MasterCard, "0000000000000000", 1000000);
     static Salesman worker = new Salesman("Janabayev Alikhan", 000101502465, "7788882200", LegalEntityType.IP, 10000000, 3, 3);
+    static Mobile iphone = new Mobile("iphone 15 pro", 670000);
+    Mobile pixel = new Mobile("pixel 7", 450000);
+    List<String> mobileList = new ArrayList<String>();
     public static void main(String[] args) {
         showMenu();
     }
@@ -46,6 +51,7 @@ public class Main {
             int next = scan.nextInt();
             if(next == 1){showDevices();}
             else if(next == 2){showChangeProfile();}
+            else if(next == 3){showSallesmanBalance();}
 
         }
         else{
@@ -65,12 +71,16 @@ public class Main {
     static void showChangeProfile(){
         System.out.println("Изменить имя(1)");
         System.out.println("Изменить номер(2)");
-        System.out.println("назад(3)");
+        System.out.println("назад на главную(3)");
         int next = scan.nextInt();
-        if (next==3){loginToMarket(1);}
+        if (next==3){showMenu();}
     }
     static void showBalance(){
         System.out.println("ваш баланс: " + client.getCreditCardBalance());
+        loginToMarket(1);
+    }
+    static void showSallesmanBalance(){
+        System.out.println("ваш баланс: " + worker.getBankAccount());
         loginToMarket(1);
     }
 }
